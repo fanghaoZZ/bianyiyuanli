@@ -1,0 +1,29 @@
+digraph DFA {
+  rankdir=LR;  // 横向布局
+
+ node [shape = circle];   // 初始状态
+
+  BCEGIKN [shape=doublecircle];
+  CDEGHIKLN [shape=doublecircle];
+  CEFGHIKLN [shape=doublecircle];
+  CEGIJKLN [shape=doublecircle];
+  A [label="State A\n(startState)"];
+  BCEGIKN [label="State BCEGIKN\n(acceptState)"];
+  CDEGHIKLN [label="State CDEGHIKLN\n(acceptState)"];
+  CEFGHIKLN [label="State CEFGHIKLN\n(acceptState)"];
+  CEGIJKLN [label="State CEGIJKLN\n(acceptState)"];
+
+  A -> BCEGIKN [label="a"];
+  BCEGIKN -> CDEGHIKLN [label="b"];
+  BCEGIKN -> CEFGHIKLN [label="c"];
+  BCEGIKN -> CEGIJKLN [label="d"];
+  CDEGHIKLN -> CDEGHIKLN [label="b"];
+  CDEGHIKLN -> CEFGHIKLN [label="c"];
+  CDEGHIKLN -> CEGIJKLN [label="d"];
+  CEFGHIKLN -> CDEGHIKLN [label="b"];
+  CEFGHIKLN -> CEFGHIKLN [label="c"];
+  CEFGHIKLN -> CEGIJKLN [label="d"];
+  CEGIJKLN -> CDEGHIKLN [label="b"];
+  CEGIJKLN -> CEFGHIKLN [label="c"];
+  CEGIJKLN -> CEGIJKLN [label="d"];
+}

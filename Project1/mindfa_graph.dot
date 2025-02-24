@@ -1,0 +1,17 @@
+digraph DFA {
+  rankdir=LR;  // 横向布局
+
+ node [shape = circle];   // 状态节点
+
+  a0 [shape=doublecircle];
+  a0 [label="State a0\n(acceptState)"];
+  a1 [label="State a1"];
+
+  a1 [shape=circle, style=bold, color=red]; // 起始状态
+  a1 -> a0 [label="a"];
+  a0 -> a0 [label="b"];
+  a0 -> a0 [label="c"];
+  a0 -> a0 [label="d"];
+  start [shape=point, width=0];
+  start -> a1;
+}
